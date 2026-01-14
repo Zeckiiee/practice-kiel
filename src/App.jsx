@@ -1,9 +1,10 @@
-import Navbar from "./layouts/Navbar"
+
+import MainPage from "./pages/MainPage"
 function App() {
   return (
     <>
      <div>
-        <Navbar />
+        <MainPage />
      </div>
     </>
   )

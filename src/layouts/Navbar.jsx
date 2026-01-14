@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 function Navbar() {
     return (
         <div className='navbar-container'>
-            <a className="logo" href="">LOGO</a>
+            <a className="logo pl-2" href="">LOGO</a>
             <div className="nav-links">
                 <ul>
                     <li>
