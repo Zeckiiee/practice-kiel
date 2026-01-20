@@ -1,190 +1,181 @@
 @import "normalize.css";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    /* COLOR */
+    --background: #ffffff;
+    --foreground: #637381;
+    --primary: #3758f9;
+    --secondary: #111928;
+    --primary-foreground: #ffffff;
+    --secondary-foreground: #ffffff;
+
+
+    /* SIZING */
+    --header-height: 6rem;
+    --header-stripp: 2rem;
+}
+
 .container {
     width: 100%;
+    max-width: clamp(320px, 90%, 1400px);
+}
+
+.inline-center {
     display: flex;
     justify-content: center;
-}
-
-.container .sub-container {
-    width: 100%;
-    padding-inline: 6rem;
-    display: flex;
-}
-
-.sub-container {
-    display: flex;
-    padding: 3rem 0 6rem 0;
-    justify-content: space-between;
-}
-
-.sub-container>div:nth-child(1) {
-    width: 100%;
-    max-width: 22rem;
-}
-
-.sub-container>div:nth-child(1) div p {
-    font-weight: 600;
-}
-
-.sub-container>div:nth-child(1) div:last-child {
-    position: relative;
-}
-
-.sub-container>div:nth-child(1) div:last-child input {
-    border-radius: 8px;
-    padding: 8px 20px;
-    border: 0;
-}
-
-.search-icon {
-    position: absolute;
-    right: 8rem;
-    top: .3rem;
-}
-
-.sub-container>div:nth-child(2) {
-    display: flex;
-    gap: 5rem;
-}
-
-.main-footer {
-    width: 100%;
-    background-color: #e6e6e6;
-}
-
-.pl-1 {
-    padding-left: 2rem;
-}
-
-.pl-2 {
-    padding-left: 1rem;
-}
-
-.small-title {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.navbar-container {
-    height: 5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
 }
 
-.navbar-container div ul {
+.rm-style {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-stripp-container {
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+}
+
+.main-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: var(--header-height);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-container .header-list ul {
     list-style: none;
     display: flex;
-    padding: 0;
-    margin: 0;
     gap: 2rem;
 }
 
-.logo {
-    text-decoration: none;
-    color: black;
+.logo div a span {
+    font-weight: 600;
     font-size: 1.5rem;
+    margin-left: 0.5rem;
 }
 
-.navbar-container .nav-links ul li {
-    display: flex;
-    align-items: center;
-    padding: .4rem .6rem;
-    transition: all 200ms ease-in-out;
+.header-btns div .sign-up {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    padding: .5rem 1.5rem;
     border-radius: 5px;
 }
 
-.navbar-container div ul li:hover {
-    background-color: #f2f2f2;
+.header-btns div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.pages-modal div {
-    padding: 1rem;
+.main-section {
+    width: 100%;
 }
 
-.pages-modal div ul {
+.main-section-container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.left-hero-section {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
-.pages-modal {
-    max-height: 0rem;
-    height: auto;
-    overflow: hidden;
-    width: 100%;
-    max-width: 17rem;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 5.5rem;
-    left: 40rem;
-    transition: 0.25s ease;
-    border-radius: 10px;
-}
-
-.components-modal {
-    max-height: 0rem;
-    height: auto;
-    overflow: hidden;
-    width: 100%;
-    max-width: 20rem;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 5.5rem;
-    left: 55rem;
-    transition: 0.25s ease;
-    border-radius: 10px;
-}
-
-.components-links div {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-}
-
-.components-modal .components-links {
+.clients-container {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
-.components-links div a {
-    text-decoration: none;
-    color: black;
+.clients-container p {
+    color: var(--foreground);
 }
 
-.nav-links ul li:first-child:hover .pages-modal {
-    max-height: 15rem;
+.clients-container>div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
 }
 
-.nav-links ul li:last-child:hover .components-modal {
-    max-height: 15rem;
+.left-hero-section>div:nth-child(1) {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
 }
 
-@media screen and (max-width: 1024px) {
-    .container .sub-container {
-        width: 100%;
-        padding-inline: 4rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
+.header-lg {
+    font-size: 4rem;
+    margin: 0;
+    z-index: 1;
+}
+.header-md {
+    font-size: 3rem;
+    margin: 0;
+    z-index: 1;
+}
 
-    .sub-container>div:nth-child(1) {
-        width: 100%;
-        max-width: 22rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.left-hero-section>div:nth-child(1) p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
 
-    .search-icon {
-        position: absolute;
-        right: .5rem;
-        top: .3rem;
-    }
+.left-hero-section>div:nth-child(1) .header-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 
+.left-hero-section>div:nth-child(1) .header-btn-container>a:nth-child(1) {
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    padding: .75rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.left-hero-section>div:nth-child(1) .header-btn-container>div a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.dotted-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-image-container img {
+    width: 100%;
+    max-width: 30rem;
+    z-index: 1;
 }
